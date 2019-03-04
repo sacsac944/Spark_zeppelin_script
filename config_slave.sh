@@ -34,4 +34,6 @@ fi
 #untar the file
 tar xvf /root/$spark_version-bin-hadoop$hadoop_version.tgz -C $installation_directory
 
-
+#Edit the ~/.bash_profile file
+echo "export PATH=$PATH:$installation_directory/$spark_version-bin-hadoop$hadoop_version/bin" >> ~/.bash_profile
+source ~/.bash_profile
