@@ -46,7 +46,7 @@ fi
 #scp $jenkins_workspace/$job_name/$spark_version-bin-hadoop$hadoop_version.tgz node1.hadoop.com:/root/
 for (( i=4; i<$3+4; i++))
 do
- scp /root/$spark_version-bin-hadoop$hadoop_version.tgz $i:/root/
+ scp /root/$spark_version-bin-hadoop$hadoop_version.tgz ${!i}:/root/
 done
 
 #untar the file
