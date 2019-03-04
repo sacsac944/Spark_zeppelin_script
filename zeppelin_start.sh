@@ -23,7 +23,7 @@ else
 fi
 
 #untar the zeppelin notebook
-tar xvf $zeppelin_version-bin-all.tgz -C $zeppelin_install_directory
+tar xvf /root/$zeppelin_version-bin-all.tgz -C $zeppelin_install_directory
 
 #Configure the spark master url for the zeppelin
 cd $zeppelin_install_directory/$zeppelin_version-bin-all
