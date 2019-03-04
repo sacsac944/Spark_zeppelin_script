@@ -74,12 +74,13 @@ cp ./conf/slaves.template ./conf/slaves
 chmod 777 ./conf/slaves
 sed -i '/localhost/d' ./conf/slaves
 echo '' >> ./conf/slaves
-
+echo $3
 #write a for loop for storing nodes
+j=0
 for (( i=4; i<$3+4; i++ ))
 do
-   echo "$i" >> ./conf/slaves
-   echo "The slave  $i added to the slaves file"
+   echo ${!i} >> ./conf/slaves
+   echo "The slave  ${!i} added to the slaves file"
 done
 
 
