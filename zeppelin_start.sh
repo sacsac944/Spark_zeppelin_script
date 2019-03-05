@@ -37,4 +37,7 @@ mkdir logs
 mkdir run
 
 #start the zeppelin daemon
+su - root << EOF
+cd $zeppelin_install_directory/$zeppelin_version-bin-all
 ./bin/zeppelin-daemon.sh start
+EOF
