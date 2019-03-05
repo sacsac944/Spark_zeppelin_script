@@ -21,15 +21,8 @@ else
    echo 'Java already installed'
 fi
 
-scala -version || wget http://downloads.lightbend.com/scala/$scala_version/scala-$scala_version.rpm
-if [[ $? -ne 0 ]] 
-then 
-   wget http://downloads.lightbend.com/scala/$scala_version/scala-$scala_version.rpm
-   yum install -y scala-$scala_version.rpm
-   echo 'Scala Installed'
-else 
-   echo 'The scala is already installed'
-fi
+scala -version || wget http://downloads.lightbend.com/scala/$scala_version/scala-$scala_version.rpm 
+scala -version || yum install -y scala-$scala_version.rpm
 
 #download the latest version of spark
 ls /root/$spark_version-bin-hadoop$hadoop_version.tgz 
