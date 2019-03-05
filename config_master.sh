@@ -11,6 +11,7 @@ spark_master_IP=$1
 java_home=/usr/lib/jvm/java-1.8.0-openjdk
 #set the java home according to the version installed in system
 #Check for the pre-requisites
+yum install -y wget
 java -version || yum install -y java-1.8.0-openjdk-devel
 if [[ $? -ne 0 ]]
 then
