@@ -20,6 +20,8 @@ then
 else
    echo 'Java already installed'
 fi
+
+cd /root
 scala -version || wget http://downloads.lightbend.com/scala/$scala_version/scala-$scala_version.rpm
 scala -version || yum install -y scala-$scala_version.rpm
 
