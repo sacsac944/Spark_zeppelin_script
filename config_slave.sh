@@ -11,6 +11,7 @@ java_home=/usr/lib/jvm/java-1.8.0-openjdk
 #give the java home accoridng to your system
 
 #Check for the pre-requisites
+yum install -y wget
 java -version || yum install -y java-1.8.0-openjdk-devel
 if [[ $? -ne 0 ]]
 then
@@ -20,14 +21,7 @@ else
    echo 'Java already installed'
 fi
 scala -version || wget http://downloads.lightbend.com/scala/$scala_version/scala-$scala_version.rpm
-if [[ $? -ne 0 ]] 
-then 
-   wget http://downloads.lightbend.com/scala/$scala_version/scala-$scala_version.rpm
-   yum install -y scala-$scala_version.rpm
-   echo 'Scala Installed'
-else 
-   echo 'The scala is already installed'
-fi
+scala -version || yum install -y scala-$scala_version.rpm
 
 
 
