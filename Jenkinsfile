@@ -41,6 +41,12 @@ pipeline {
                 sh 'sh /root/scripts/zeppelin_start.sh spark://15.213.95.216:7077'
             }
         }
+        stage('cassandra_config'){
+            agent{label 'spark_master'}
+            steps{
+                sh 'sh /root/scripts/config_cassandra.sh 15.213.95.216'
+            }
+        }
         
         
     }
